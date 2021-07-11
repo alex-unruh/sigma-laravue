@@ -14,7 +14,6 @@ import "@fullcalendar/timegrid/main.min.css";
 import "./assets/layout/layout.scss";
 import "./assets/layout/flags/flags.css";
 
-import router from "./router";
 import PrimeVue from "primevue/config";
 import AutoComplete from "primevue/autocomplete";
 import Accordion from "primevue/accordion";
@@ -98,13 +97,7 @@ import ToggleButton from "primevue/togglebutton";
 import Tree from "primevue/tree";
 import TreeTable from "primevue/treetable";
 import TriStateCheckbox from "primevue/tristatecheckbox";
-
 import CodeHighlight from "./AppCodeHighlight";
-
-router.beforeEach(function (to, from, next) {
-    window.scrollTo(0, 0);
-    next();
-});
 
 InertiaProgress.init();
 
@@ -113,12 +106,10 @@ createInertiaApp({
     setup({ el, app, props, plugin }) {
        const vue = createApp({ render: () => h(app, props) })
         .use(plugin)
-        .mixin({ methods: { route: window.route } })
-
         .use(PrimeVue, { ripple: true })
         .use(ConfirmationService)
         .use(ToastService)
-        .use(router)
+        .mixin({ methods: {route: window.route} })
 
         .directive("tooltip", Tooltip)
         .directive("ripple", Ripple)
