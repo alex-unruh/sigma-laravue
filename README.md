@@ -28,10 +28,7 @@ Rename .env.example file to .env
 
 
 \
-Run: 
-```
-php artisan key:generate
-```
+Run:
 ```
 npm install
 ```
