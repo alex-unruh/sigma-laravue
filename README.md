@@ -4,7 +4,7 @@ This is a version of [Sigma Vue Project](https://github.com/primefaces/sigma-vue
 
 Sigma Vue is an admin template builded with Vue Prime Ui Kit
 
-Work with Inertia instead of Vue Router allows you to use all Laravel features like routes, controllers, models, policies, gates, middlewares, validations... keeping the [SPA](https://en.wikipedia.org/wiki/Single-page_application) aspect of the application without any loading between page requests and no worries with client side state management
+Working with Inertia instead of Vue Router allows you to use all Laravel features like routes, controllers, models, policies, gates, middlewares, validations... keeping the [SPA](https://en.wikipedia.org/wiki/Single-page_application) aspect of the application without any loading between page requests and no worries with client side state management
 
 ## Docs:
 
