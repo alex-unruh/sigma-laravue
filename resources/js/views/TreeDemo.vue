@@ -1,42 +1,38 @@
 <template>
-  <layout>
-    <div class="p-grid">
-      <div class="p-col-12">
-        <div class="card">
-          <h5>Tree</h5>
-          <Tree
-            :value="treeValue"
-            selectionMode="checkbox"
-            v-model:selectionKeys="selectedTreeValue"
-          ></Tree>
-        </div>
-      </div>
-      <div class="p-col-12">
-        <div class="card">
-          <h5>TreeTable</h5>
-          <TreeTable
-            :value="treeTableValue"
-            selectionMode="checkbox"
-            v-model:selectionKeys="selectedTreeTableValue"
-          >
-            <template #header> FileSystem </template>
-            <Column field="name" header="Name" :expander="true"></Column>
-            <Column field="size" header="Size"></Column>
-            <Column field="type" header="Type"></Column>
-          </TreeTable>
-        </div>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <div class="card">
+        <h5>Tree</h5>
+        <Tree
+          :value="treeValue"
+          selectionMode="checkbox"
+          v-model:selectionKeys="selectedTreeValue"
+        ></Tree>
       </div>
     </div>
-  </layout>
+    <div class="p-col-12">
+      <div class="card">
+        <h5>TreeTable</h5>
+        <TreeTable
+          :value="treeTableValue"
+          selectionMode="checkbox"
+          v-model:selectionKeys="selectedTreeTableValue"
+        >
+          <template #header> FileSystem </template>
+          <Column field="name" header="Name" :expander="true"></Column>
+          <Column field="size" header="Size"></Column>
+          <Column field="type" header="Type"></Column>
+        </TreeTable>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 import NodeService from "../service/NodeService";
 import Layout from "../layout/App";
 export default {
-  components: {
-    Layout,
-  },
+  layout: Layout,
   data() {
     return {
       treeValue: null,

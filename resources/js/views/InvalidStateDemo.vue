@@ -1,5 +1,4 @@
 <template>
-<layout>
   <div class="p-grid p-nogutter">
     <div class="card" style="width: 100%">
       <h5>Invalid State</h5>
@@ -96,7 +95,6 @@
       </div>
     </div>
   </div>
-  </layout>
 </template>
 
 <script>
@@ -104,9 +102,7 @@ import Layout from "../layout/App";
 import CountryService from "../service/CountryService";
 
 export default {
-  components: {
-    Layout
-  },
+  layout: Layout,
   data() {
     return {
       countries: null,

@@ -1,5 +1,5 @@
 <template>
-  <layout>
+
     <div class="p-grid p-fluid">
       <div class="p-col-12 p-lg-6">
         <div class="card">
@@ -34,15 +34,12 @@
         </div>
       </div>
     </div>
-  </layout>
 </template>
 
 <script>
 import Layout from "../layout/App";
 export default {
-  components: {
-    Layout,
-  },
+  layout: Layout,
   data() {
     return {
       lineData: {

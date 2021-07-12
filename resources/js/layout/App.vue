@@ -9,9 +9,9 @@
         v-show="isSidebarVisible()"
       >
         <div class="layout-logo">
-          <router-link to="/">
+          <inertia-link href="/">
             <img alt="Logo" :src="logo" />
-          </router-link>
+          </inertia-link>
         </div>
 
         <AppProfile />

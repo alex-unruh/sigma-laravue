@@ -1,5 +1,4 @@
 <template>
-  <layout>
     <div class="p-grid p-fluid">
       <div class="p-col-12 p-md-6">
         <div class="card">
@@ -318,15 +317,12 @@
         </div>
       </div>
     </div>
-  </layout>
 </template>
 <script>
 import Layout from "../layout/App";
 import CountryService from "../service/CountryService";
 export default {
-  components: {
-    Layout
-  },
+  layout: Layout,
   data() {
     return {
       floatValue: null,

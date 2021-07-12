@@ -82,6 +82,7 @@ export default {
   data() {
     return {
       activeIndex: null,
+      currentRoute: null
     };
   },
   methods: {
@@ -94,6 +95,8 @@ export default {
       if (!item.to && !item.url) {
         event.preventDefault();
       }
+
+      this.currentRoute = item.to;
 
       //execute command
       if (item.command) {
@@ -113,12 +116,11 @@ export default {
         : item.visible !== false;
     },
     getClasses(item) {
-      let isCurrent = route().current(item.to);
+      var isCurrent = this.currentRoute == item.to;
       return [
         item.class,
         "p-ripple",
         {
-          "active-route": isCurrent,
           "router-link-active": isCurrent,
           "router-link-exact-active": isCurrent,
           "p-disabled": item.disabled,

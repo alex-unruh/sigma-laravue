@@ -1,5 +1,5 @@
 <template>
-  <layout>
+
     <div class="p-grid">
       <div class="p-col-12">
         <div class="card">
@@ -160,16 +160,13 @@
         </div>
       </div>
     </div>
-  </layout>
 </template>
 
 <script>
 import ProductService from "../service/ProductService";
 import Layout from "../layout/App";
 export default {
-  components: {
-    Layout,
-  },
+  layout: Layout,
   data() {
     return {
       picklistValue: [
