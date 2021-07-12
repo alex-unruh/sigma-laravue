@@ -43,3 +43,4 @@ npm run hot
 php artisan serve
 ```
 
+To view the application with the best performance, I recommend disabling xdebug on your server. Obviously this is a full version, with all the features of the Vue Sigma template enabled. After developing your own application, I recommend removing all unused components from the app.js file.
