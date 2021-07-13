@@ -1,4 +1,5 @@
 <template>
+  <inertia-head title="Overlay" />
   <div class="p-grid overlay-demo">
     <div class="p-col-12 p-lg-6">
       <div class="card p-fluid">

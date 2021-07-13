@@ -1,4 +1,5 @@
 <template>
+  <inertia-head title="Menu Demo" />
   <div class="p-grid p-fluid">
     <div class="p-col-12">
       <div class="card card-w-title">

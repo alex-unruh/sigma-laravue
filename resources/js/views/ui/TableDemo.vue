@@ -1,4 +1,5 @@
 <template>
+  <inertia-head title="Table" />
   <div class="p-grid">
     <div class="p-col-12">
       <div class="card">
