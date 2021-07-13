@@ -23,18 +23,15 @@ After clone this repository, run:
 ```
 composer install
 ```
-\
-Rename .env.example file to .env 
-
-
-\
-Run:
 ```
 npm install
 ```
 ```
 npm run hot
 ```
+
+\
+And finally to start the server, run
 
 ```
 php artisan serve
