@@ -73,11 +73,11 @@
 </template>
 
 <script>
-import EventService from "../../service/EventService";
+import EventService from "@/service/EventService";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
-import Layout from "../../layout/App";
+import Layout from "@/layout/App";
 export default {
   layout: Layout,
   data() {

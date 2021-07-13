@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import NodeService from "../../service/NodeService";
-import Layout from "../../layout/App";
+import NodeService from "@/service/NodeService";
+import Layout from "@/layout/App";
 export default {
   layout: Layout,
   data() {

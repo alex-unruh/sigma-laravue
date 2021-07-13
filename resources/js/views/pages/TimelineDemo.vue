@@ -63,7 +63,7 @@
 </template>
 
 <script>
-import Layout from "../../layout/App";
+import Layout from "@/layout/App";
 export default {
   layout: Layout,
   data() {

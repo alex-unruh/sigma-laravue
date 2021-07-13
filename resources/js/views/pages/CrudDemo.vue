@@ -358,8 +358,8 @@
 </template>
 
 <script>
-import ProductService from "../../service/ProductService";
-import Layout from "../../layout/App";
+import ProductService from "@/service/ProductService";
+import Layout from "@/layout/App";
 export default {
   layout: Layout,
   data() {

@@ -602,10 +602,10 @@
 </template>
 
 <script>
-import Layout from "../../layout/App";
+import Layout from "@/layout/App";
 import { FilterMatchMode, FilterOperator } from "primevue/api";
-import CustomerService from "../../service/CustomerService";
-import ProductService from "../../service/ProductService";
+import CustomerService from "@/service/CustomerService";
+import ProductService from "@/service/ProductService";
 export default {
   layout: Layout,
   data() {

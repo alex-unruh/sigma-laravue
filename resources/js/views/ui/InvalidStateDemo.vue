@@ -99,8 +99,8 @@
 </template>
 
 <script>
-import Layout from "../../layout/App";
-import CountryService from "../../service/CountryService";
+import Layout from "@/layout/App";
+import CountryService from "@/service/CountryService";
 
 export default {
   layout: Layout,
