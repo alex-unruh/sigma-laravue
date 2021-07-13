@@ -1,5 +1,5 @@
 <template>
- <inertia-head title="Dashboard" />
+  <inertia-head title="Dashboard" />
   <div class="p-grid p-fluid dashboard">
     <div class="p-col-12 p-lg-4">
       <div class="card summary">
@@ -308,9 +308,9 @@
 </template>
 
 <script>
-import Layout from "../layout/App";
-import ProductService from "../service/ProductService";
-import EventService from "../service/EventService";
+import Layout from "@/layout/App";
+import ProductService from "@/service/ProductService";
+import EventService from "@/service/EventService";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
