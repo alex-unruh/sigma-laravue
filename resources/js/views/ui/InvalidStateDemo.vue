@@ -1,4 +1,5 @@
 <template>
+  <inertia-head title="Invalid State" />
   <div class="p-grid p-nogutter">
     <div class="card" style="width: 100%">
       <h5>Invalid State</h5>

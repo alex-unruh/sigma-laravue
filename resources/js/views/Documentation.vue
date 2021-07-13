@@ -1,4 +1,5 @@
 <template>
+ <inertia-head title="Documentation" />
   <div class="p-grid">
     <div class="p-col-12">
       <div class="card docs">
@@ -332,9 +333,7 @@ $footerBgColor:#ffffff;
           following form;
         </p>
         <pre v-code>
-<code><template v-pre>
-&lt;div class="layout-wrapper layout-static"&gt;
-</template>
+<code><template v-pre>&lt;div class="layout-wrapper layout-static"&gt;</template>
 </code></pre>
 
         <p>
@@ -355,16 +354,12 @@ $footerBgColor:#ffffff;
 
         <b>Dark Menu</b>
         <pre v-code>
-<code><template v-pre>
-&lt;div class="layout-sidebar layout-sidebar-dark"&gt;
-</template>
+<code><template v-pre>&lt;div class="layout-sidebar layout-sidebar-dark"&gt;</template>
 </code></pre>
 
         <b>Light Menu</b>
         <pre v-code>
-<code><template v-pre>
-&lt;div class="layout-sidebar layout-sidebar-light"&gt;
-</template>
+<code><template v-pre>&lt;div class="layout-sidebar layout-sidebar-light"&gt;</template>
 </code></pre>
 
         <h4>Grid CSS</h4>
@@ -390,7 +385,7 @@ $footerBgColor:#ffffff;
 <script>
 import Layout from "../layout/App";
 export default {
-  layout: Layout
+  layout: Layout,
 };
 </script>
 

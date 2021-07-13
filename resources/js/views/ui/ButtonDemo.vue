@@ -1,4 +1,5 @@
 <template>
+  <inertia-head title="Buttons" />
   <div class="p-grid button-demo">
     <div class="p-col-12 p-md-6">
       <div class="card">

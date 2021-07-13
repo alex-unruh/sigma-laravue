@@ -1,4 +1,5 @@
 <template>
+  <inertia-head title="Form Layout" />
   <div class="p-grid">
     <div class="p-col-12 p-md-6">
       <div class="card p-fluid">

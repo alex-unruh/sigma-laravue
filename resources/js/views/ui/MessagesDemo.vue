@@ -1,4 +1,5 @@
 <template>
+  <inertia-head title="Messages" />
   <div class="p-grid messages-demo">
     <div class="p-col-12 p-lg-6">
       <div class="card">

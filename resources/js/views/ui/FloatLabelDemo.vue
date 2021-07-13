@@ -1,4 +1,5 @@
 <template>
+  <inertia-head title="Float Label" />
   <div class="floatlabel-demo">
     <div class="card">
       <h5>Float Label</h5>

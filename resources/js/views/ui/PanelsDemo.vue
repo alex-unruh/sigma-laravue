@@ -1,4 +1,5 @@
 <template>
+  <inertia-head title="Panels" />
   <div class="p-grid panel-demo">
     <div class="p-col-12">
       <div class="card toolbar-demo">

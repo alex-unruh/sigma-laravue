@@ -1,5 +1,5 @@
 <template>
-
+  <inertia-head title="DataView" />
     <div class="p-grid">
       <div class="p-col-12">
         <div class="card">
