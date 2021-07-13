@@ -5,4 +5,5 @@ mix
   .postCss("resources/css/app.css", "public/css", [
     //
   ])
-  .vue({ version: 3 });
+  .vue({ version: 3 })
+  .alias({ "@": "resources/js" });
