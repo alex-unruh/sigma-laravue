@@ -11,7 +11,6 @@
     },
     "devDependencies": {
         "@vue/compiler-sfc": "^3.1.4",
-        "axios": "^0.21",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
@@ -33,7 +32,7 @@
         "@inertiajs/inertia": "^0.9.2",
         "@inertiajs/inertia-vue3": "^0.4.7",
         "@inertiajs/progress": "^0.2.5",
-        "axios": "^0.19.0",
+        "axios": "^0.21",
         "chart.js": "2.7.3",
         "core-js": "^3.6.5",
         "primeflex": "2.0.0",
