@@ -17,7 +17,7 @@ Route::get('/list', function(){ return Inertia::render('ui/ListDemo');})->name('
 Route::get('/tree', function(){ return Inertia::render('ui/TreeDemo');})->name('tree');
 Route::get('/panel', function(){ return Inertia::render('ui/PanelsDemo');})->name('panel');
 Route::get('/overlay', function(){ return Inertia::render('ui/OverlayDemo');})->name('overlay');
-//Route::get('/menu', function(){ return Inertia::render('ui/MenuDemo');})->name('menu');
+Route::get('/menu', function(){ return Inertia::render('ui/MenuDemo');})->name('menu');
 Route::get('/messages', function(){ return Inertia::render('ui/MessagesDemo');})->name('messages');
 Route::get('/file', function(){ return Inertia::render('ui/FileDemo');})->name('file');
 Route::get('/chart', function(){ return Inertia::render('ui/ChartDemo');})->name('chart');

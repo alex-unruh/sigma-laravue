@@ -12,7 +12,6 @@ import "@fullcalendar/daygrid/main.min.css";
 import "@fullcalendar/timegrid/main.min.css";
 import "./assets/layout/layout.scss";
 import "./assets/layout/flags/flags.css";
-
 import CodeHighlight from "./AppCodeHighlight";
 
 InertiaProgress.init();

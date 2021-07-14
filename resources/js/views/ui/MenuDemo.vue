@@ -1,6 +1,13 @@
 <template>
-  <inertia-head title="Menu Demo" />
   <div class="p-grid p-fluid">
+    <inertia-head title="Menu Demo" />
+    <div class="p-col-12">
+      <div class="card card-w-title">
+        <h5>Breadcrumb</h5>
+        <Breadcrumb :home="breadcrumbHome" :model="breadcrumbItems" />
+      </div>
+    </div>
+    <!-- <div class="p-grid p-fluid">
     <div class="p-col-12">
       <div class="card card-w-title">
         <h5>Menubar</h5>
@@ -90,7 +97,7 @@
         <h5>PanelMenu</h5>
         <PanelMenu :model="panelMenuitems" />
       </div>
-    </div>
+    </div>-->
   </div>
 </template>
 
@@ -176,13 +183,13 @@ export default {
           icon: "pi pi-fw pi-sign-out",
         },
       ],
-      breadcrumbHome: { icon: "pi pi-home", to: "/" },
+      breadcrumbHome: { icon: "pi pi-home", target: 'dashboard' },
       breadcrumbItems: [
-        { label: "Computer" },
-        { label: "Notebook" },
-        { label: "Accessories" },
-        { label: "Backpacks" },
-        { label: "Item" },
+        { label: "Computer", target: "menu" },
+        { label: "Notebook", target: "menu" },
+        { label: "Accessories", target: "menu" },
+        { label: "Backpacks", target: "menu" },
+        { label: "Item", target: "menu" }
       ],
       nestedRouteItems: [
         {
@@ -359,19 +366,11 @@ export default {
             [
               {
                 label: "Woman",
-                items: [
-                  { label: "Woman Item" },
-                  { label: "Woman Item" },
-                  { label: "Woman Item" },
-                ],
+                items: [{ label: "Woman Item" }, { label: "Woman Item" }, { label: "Woman Item" }],
               },
               {
                 label: "Men",
-                items: [
-                  { label: "Men Item" },
-                  { label: "Men Item" },
-                  { label: "Men Item" },
-                ],
+                items: [{ label: "Men Item" }, { label: "Men Item" }, { label: "Men Item" }],
               },
             ],
             [
@@ -381,11 +380,7 @@ export default {
               },
               {
                 label: "Luggage",
-                items: [
-                  { label: "Luggage Item" },
-                  { label: "Luggage Item" },
-                  { label: "Luggage Item" },
-                ],
+                items: [{ label: "Luggage Item" }, { label: "Luggage Item" }, { label: "Luggage Item" }],
               },
             ],
           ],
@@ -401,11 +396,7 @@ export default {
               },
               {
                 label: "Camcorder",
-                items: [
-                  { label: "Camcorder Item" },
-                  { label: "Camcorder Item" },
-                  { label: "Camcorder Item" },
-                ],
+                items: [{ label: "Camcorder Item" }, { label: "Camcorder Item" }, { label: "Camcorder Item" }],
               },
             ],
             [
@@ -415,11 +406,7 @@ export default {
               },
               {
                 label: "Audio",
-                items: [
-                  { label: "Audio Item" },
-                  { label: "Audio Item" },
-                  { label: "Audio Item" },
-                ],
+                items: [{ label: "Audio Item" }, { label: "Audio Item" }, { label: "Audio Item" }],
               },
             ],
             [
@@ -437,18 +424,11 @@ export default {
             [
               {
                 label: "Living Room",
-                items: [
-                  { label: "Living Room Item" },
-                  { label: "Living Room Item" },
-                ],
+                items: [{ label: "Living Room Item" }, { label: "Living Room Item" }],
               },
               {
                 label: "Kitchen",
-                items: [
-                  { label: "Kitchen Item" },
-                  { label: "Kitchen Item" },
-                  { label: "Kitchen Item" },
-                ],
+                items: [{ label: "Kitchen Item" }, { label: "Kitchen Item" }, { label: "Kitchen Item" }],
               },
             ],
             [
@@ -458,11 +438,7 @@ export default {
               },
               {
                 label: "Outdoor",
-                items: [
-                  { label: "Outdoor Item" },
-                  { label: "Outdoor Item" },
-                  { label: "Outdoor Item" },
-                ],
+                items: [{ label: "Outdoor Item" }, { label: "Outdoor Item" }, { label: "Outdoor Item" }],
               },
             ],
           ],
@@ -474,18 +450,11 @@ export default {
             [
               {
                 label: "Basketball",
-                items: [
-                  { label: "Basketball Item" },
-                  { label: "Basketball Item" },
-                ],
+                items: [{ label: "Basketball Item" }, { label: "Basketball Item" }],
               },
               {
                 label: "Football",
-                items: [
-                  { label: "Football Item" },
-                  { label: "Football Item" },
-                  { label: "Football Item" },
-                ],
+                items: [{ label: "Football Item" }, { label: "Football Item" }, { label: "Football Item" }],
               },
             ],
             [
