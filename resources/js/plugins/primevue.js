@@ -13,7 +13,7 @@ import AvatarGroup from "primevue/avatargroup";
 import Badge from "primevue/badge";
 import BadgeDirective from "primevue/badgedirective";
 import Button from "primevue/button";
-import Breadcrumb from "primevue/breadcrumb";
+import Breadcrumb from "@/primevue/Breadcrumb";
 import Calendar from "primevue/calendar";
 import Card from "primevue/card";
 import Carousel from "primevue/carousel";
