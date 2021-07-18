@@ -13,59 +13,26 @@
       >
         <div v-if="item.items && root === true" class="arrow"></div>
 
-        <inertia-link
-          v-if="route().has(item.to)"
-          :href="route(item.to)"
-          :class="getClasses(item)"
-          @click="onMenuItemClick($event, item, i)"
-          :aria-current="route().current(item.to) ? 'page' : ''"
-          :target="item.target"
-          exact
-        >
+        <inertia-link v-if="route().has(item.to)" :href="route(item.to)" :class="getClasses(item)" @click="onMenuItemClick($event, item, i)" :aria-current="route().current(item.to) ? 'page' : ''" :target="item.target" exact>
           <i :class="item.icon"></i>
           <span>{{ item.label }}</span>
-          <i
-            v-if="item.items"
-            class="pi pi-fw pi-angle-down menuitem-toggle-icon"
-          ></i>
+          <i v-if="item.items" class="pi pi-fw pi-angle-down menuitem-toggle-icon"></i>
           <span v-if="item.badge" class="menuitem-badge">{{ item.badge }}</span>
         </inertia-link>
 
-        <a
-          v-if="!item.to"
-          :href="item.url || '#'"
-          :style="item.style"
-          :class="[item.class, 'p-ripple', { 'p-disabled': item.disabled }]"
-          @click="onMenuItemClick($event, item, i)"
-          :target="item.target"
-          role="menuitem"
-          v-ripple
-        >
+        <a v-if="!item.to" :href="item.url || '#'" :style="item.style" :class="[item.class, 'p-ripple', { 'p-disabled': item.disabled }]" @click="onMenuItemClick($event, item, i)" :target="item.target" role="menuitem" v-ripple>
           <i :class="item.icon"></i>
           <span>{{ item.label }}</span>
-          <i
-            v-if="item.items"
-            class="pi pi-fw pi-angle-down menuitem-toggle-icon"
-          ></i>
+          <i v-if="item.items" class="pi pi-fw pi-angle-down menuitem-toggle-icon"></i>
           <span v-if="item.badge" class="menuitem-badge">{{ item.badge }}</span>
         </a>
 
         <transition name="layout-submenu-wrapper">
-          <appsubmenu
-            v-show="activeIndex === i"
-            :items="visible(item) && item.items"
-            @menuitem-click="$emit('menuitem-click', $event)"
-          ></appsubmenu>
+          <appsubmenu v-show="activeIndex === i" :items="visible(item) && item.items" @menuitem-click="$emit('menuitem-click', $event)"></appsubmenu>
         </transition>
       </li>
 
-      <li
-        class="p-menu-separator"
-        :style="item.style"
-        v-if="visible(item) && item.separator"
-        :key="'separator' + i"
-        role="separator"
-      ></li>
+      <li class="p-menu-separator" :style="item.style" v-if="visible(item) && item.separator" :key="'separator' + i" role="separator"></li>
     </template>
   </ul>
 </template>
@@ -82,7 +49,7 @@ export default {
   data() {
     return {
       activeIndex: null,
-      currentRoute: null
+      currentRoute: null,
     };
   },
   methods: {
@@ -111,9 +78,7 @@ export default {
       });
     },
     visible(item) {
-      return typeof item.visible === "function"
-        ? item.visible()
-        : item.visible !== false;
+      return typeof item.visible === "function" ? item.visible() : item.visible !== false;
     },
     getClasses(item) {
       var isCurrent = this.currentRoute == item.to;

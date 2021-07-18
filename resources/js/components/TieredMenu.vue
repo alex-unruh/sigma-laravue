@@ -1,20 +1,8 @@
 <template>
   <Teleport :to="appendTo" :disabled="!popup">
     <transition name="p-connected-overlay" @enter="onEnter" @leave="onLeave">
-      <div :ref="containerRef" :class="containerClass" v-if="popup ? overlayVisible : true" v-bind="$attrs" @click="onOverlayClick">
-        <ul class="p-menu-list p-reset" role="menu">
-          <template v-for="(item, i) of model" :key="i">
-            <template v-if="item.items && visible(item) && !item.separator">
-              <li class="p-submenu-header" v-if="item.items">{{ item.label }}</li>
-              <template v-for="(child, j) of item.items" :key="i + j">
-                <Menuitem v-if="visible(child) && !child.separator" :item="child" @click="itemClick" />
-                <li v-else-if="visible(child) && child.separator" :class="['p-menu-separator', child.class]" :style="child.style" :key="'separator' + i + j" role="separator"></li>
-              </template>
-            </template>
-            <li v-else-if="visible(item) && item.separator" :class="['p-menu-separator', item.class]" :style="item.style" :key="'separator' + i" role="separator"></li>
-            <Menuitem v-else :key="item.label + i" :item="item" @click="itemClick" />
-          </template>
-        </ul>
+      <div :ref="containerRef" :class="containerClass" v-if="popup ? visible : true" v-bind="$attrs" @click="onOverlayClick">
+        <TieredMenuSub :model="model" :root="true" :popup="popup" @leaf-click="onLeafClick" />
       </div>
     </transition>
   </Teleport>
@@ -22,7 +10,7 @@
 
 <script>
 import { ConnectedOverlayScrollHandler, DomHandler, OverlayEventBus } from "primevue/utils";
-import Menuitem from "./Menuitem.vue";
+import TieredMenuSub from "./TieredMenuSub.vue";
 
 export default {
   inheritAttrs: false,
@@ -48,16 +36,16 @@ export default {
       default: 0,
     },
   },
-  data() {
-    return {
-      overlayVisible: false,
-    };
-  },
   target: null,
+  container: null,
   outsideClickListener: null,
   scrollHandler: null,
   resizeListener: null,
-  container: null,
+  data() {
+    return {
+      visible: false,
+    };
+  },
   beforeUnmount() {
     this.unbindResizeListener();
     this.unbindOutsideClickListener();
@@ -72,31 +60,22 @@ export default {
   methods: {
     itemClick(event) {
       const item = event.item;
-      if (item.disabled) {
-        return;
-      }
-
       if (item.command) {
         item.command(event);
+        event.originalEvent.preventDefault();
       }
-
-      if (item.to && event.navigate) {
-        event.navigate(event.originalEvent);
-      }
-
       this.hide();
     },
     toggle(event) {
-      if (this.overlayVisible) this.hide();
+      if (this.visible) this.hide();
       else this.show(event);
     },
     show(event) {
-      this.overlayVisible = true;
+      this.visible = true;
       this.target = event.currentTarget;
     },
     hide() {
-      this.overlayVisible = false;
-      this.target = null;
+      this.visible = false;
     },
     onEnter() {
       this.alignOverlay();
@@ -120,7 +99,7 @@ export default {
     bindOutsideClickListener() {
       if (!this.outsideClickListener) {
         this.outsideClickListener = (event) => {
-          if (this.overlayVisible && this.container && !this.container.contains(event.target) && !this.isTargetClicked(event)) {
+          if (this.visible && this.container && !this.container.contains(event.target) && !this.isTargetClicked(event)) {
             this.hide();
           }
         };
@@ -136,7 +115,7 @@ export default {
     bindScrollListener() {
       if (!this.scrollHandler) {
         this.scrollHandler = new ConnectedOverlayScrollHandler(this.target, () => {
-          if (this.overlayVisible) {
+          if (this.visible) {
             this.hide();
           }
         });
@@ -152,7 +131,7 @@ export default {
     bindResizeListener() {
       if (!this.resizeListener) {
         this.resizeListener = () => {
-          if (this.overlayVisible) {
+          if (this.visible) {
             this.hide();
           }
         };
@@ -168,8 +147,10 @@ export default {
     isTargetClicked() {
       return this.target && (this.target === event.target || this.target.contains(event.target));
     },
-    visible(item) {
-      return typeof item.visible === "function" ? item.visible() : item.visible !== false;
+    onLeafClick() {
+      if (this.popup) {
+        this.hide();
+      }
     },
     containerRef(el) {
       this.container = el;
@@ -184,31 +165,38 @@ export default {
   computed: {
     containerClass() {
       return [
-        "p-menu p-component",
+        "p-tieredmenu p-component",
         {
-          "p-menu-overlay": this.popup,
+          "p-tieredmenu-overlay": this.popup,
         },
       ];
     },
   },
   components: {
-    Menuitem: Menuitem,
+    TieredMenuSub: TieredMenuSub,
   },
 };
 </script>
 
 <style>
-.p-menu-overlay {
+.p-tieredmenu-overlay {
   position: absolute;
 }
 
-.p-menu ul {
+.p-tieredmenu ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.p-menu .p-menuitem-link {
+.p-tieredmenu .p-submenu-list {
+  position: absolute;
+  min-width: 100%;
+  z-index: 1;
+  display: none;
+}
+
+.p-tieredmenu .p-menuitem-link {
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -217,7 +205,21 @@ export default {
   position: relative;
 }
 
-.p-menu .p-menuitem-text {
+.p-tieredmenu .p-menuitem-text {
   line-height: 1;
+}
+
+.p-tieredmenu .p-menuitem {
+  position: relative;
+}
+
+.p-tieredmenu .p-menuitem-link .p-submenu-icon {
+  margin-left: auto;
+}
+
+.p-tieredmenu .p-menuitem-active > .p-submenu-list {
+  display: block;
+  left: 100%;
+  top: 0;
 }
 </style>

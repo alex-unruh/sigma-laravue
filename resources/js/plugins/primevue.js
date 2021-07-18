@@ -25,7 +25,6 @@ import Column from "primevue/column";
 import ConfirmDialog from "primevue/confirmdialog";
 import ConfirmPopup from "primevue/confirmpopup";
 import ConfirmationService from "primevue/confirmationservice";
-import ContextMenu from "primevue/contextmenu";
 import DataTable from "primevue/datatable";
 import DataView from "primevue/dataview";
 import DataViewLayoutOptions from "primevue/dataviewlayoutoptions";
@@ -44,8 +43,6 @@ import InputText from "primevue/inputtext";
 import Knob from "primevue/knob";
 import Galleria from "primevue/galleria";
 import Listbox from "primevue/listbox";
-import MegaMenu from "primevue/megamenu";
-
 import Message from "primevue/message";
 import MultiSelect from "primevue/multiselect";
 import OrderList from "primevue/orderlist";
@@ -53,7 +50,6 @@ import OrganizationChart from "primevue/organizationchart";
 import OverlayPanel from "primevue/overlaypanel";
 import Paginator from "primevue/paginator";
 import Panel from "primevue/panel";
-import PanelMenu from "primevue/panelmenu";
 import Password from "primevue/password";
 import PickList from "primevue/picklist";
 import ProgressBar from "primevue/progressbar";
@@ -69,9 +65,7 @@ import Skeleton from "primevue/skeleton";
 import SplitButton from "primevue/splitbutton";
 import Splitter from "primevue/splitter";
 import SplitterPanel from "primevue/splitterpanel";
-import TabMenu from "primevue/tabmenu";
 import Tag from "primevue/tag";
-import TieredMenu from "primevue/tieredmenu";
 import Textarea from "primevue/textarea";
 import Timeline from "primevue/timeline";
 import Toast from "primevue/toast";
@@ -89,7 +83,12 @@ import TriStateCheckbox from "primevue/tristatecheckbox";
 import Menubar from "@/components/Menubar";
 import Breadcrumb from "@/components/Breadcrumb";
 import Steps from "@/components/Steps";
+import TabMenu from "@/components/TabMenu";
+import TieredMenu from "@/components/TieredMenu";
 import Menu from "@/components/Menu";
+import ContextMenu from "@/components/ContextMenu";
+import MegaMenu from "@/components/MegaMenu";
+import PanelMenu from "@/components/PanelMenu";
 
 //Register Primevue
 export const registrationPrimevue = (app) => {

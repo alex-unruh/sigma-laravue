@@ -31,18 +31,13 @@
         <slot />
       </div>
     </div>
-    <!-- <div class="p-grid p-fluid">
-
-
-
-
 
     <div class="p-col-12 p-md-6">
       <div class="card card-w-title">
         <h5>TabMenu</h5>
         <p>Steps and TabMenu are integrated with the same child routes.</p>
         <TabMenu :model="nestedRouteItems" />
-        <router-view />
+        <slot />
       </div>
     </div>
 
@@ -65,13 +60,7 @@
         <h5>Overlay Menu</h5>
 
         <Menu ref="menu" :model="overlayMenuItems" :popup="true" />
-        <Button
-          type="button"
-          label="Options"
-          icon="pi pi-angle-down"
-          @click="toggleMenu"
-          style="width: auto"
-        />
+        <Button type="button" label="Options" icon="pi pi-angle-down" @click="toggleMenu" style="width: auto" />
       </div>
 
       <div class="card" @contextmenu="onContextRightClick">
@@ -96,7 +85,7 @@
         <h5>PanelMenu</h5>
         <PanelMenu :model="panelMenuitems" />
       </div>
-    </div>-->
+    </div>
   </div>
 </template>
 

@@ -1,10 +1,8 @@
 <template>
   <li :class="containerClass" role="none" :style="item.style" v-if="visible()">
-    <inertia-link v-if="item.to && !item.disabled" :to="item.to" custom v-slot="{ navigate, href }">
-      <a :href="href" @click="onClick($event, navigate)" :class="linkClass" v-ripple role="menuitem">
-        <span :class="['p-menuitem-icon', item.icon]"></span>
-        <span class="p-menuitem-text">{{ item.label }}</span>
-      </a>
+    <inertia-link @click="onClick($event, navigate)" :class="linkClass" v-ripple v-if="item.to && !item.disabled" :href="route(item.to)" custom>
+      <span :class="['p-menuitem-icon', item.icon]"></span>
+      <span class="p-menuitem-text">{{ item.label }}</span>
     </inertia-link>
     <a v-else :href="item.url" :class="linkClass" @click="onClick" :target="item.target" role="menuitem" :tabindex="item.disabled ? null : '0'" v-ripple>
       <span :class="['p-menuitem-icon', item.icon]"></span>
