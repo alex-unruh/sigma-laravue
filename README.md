@@ -6,7 +6,7 @@ Sigma Vue is an admin template builded with Vue Prime Ui Kit
 
 Working with Inertia instead of Vue Router allows you to use all Laravel features like routes, controllers, models, policies, gates, middlewares, validations... keeping the [SPA](https://en.wikipedia.org/wiki/Single-page_application) aspect of the application without any loading between page requests and no worries with client side state management
 
-## Docs:
+## Docs
 
 - [Vue](https://v3.vuejs.org/)
 - [Laravel](https://laravel.com/docs/8.x)
@@ -37,4 +37,4 @@ And finally to start the server, run
 php artisan serve
 ```
 
-To view the application with the best performance, I recommend disabling xdebug on your server. Obviously this is a full version, with all the features of the Vue Sigma template enabled. After developing your own application, I recommend removing all unused components from the app.js file.
+To view the application with the best performance, I recommend disabling xdebug on your server. Obviously this is a full version, with all the features of the Vue Sigma template enabled. After developing your own application, I recommend removing all unused components from the *resources/js/plugins/primevue.js* file.

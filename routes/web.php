@@ -23,6 +23,11 @@ Route::get('/file', function(){ return Inertia::render('ui/FileDemo');})->name('
 Route::get('/chart', function(){ return Inertia::render('ui/ChartDemo');})->name('chart');
 Route::get('/misc', function(){ return Inertia::render('ui/MiscDemo');})->name('misc');
 
+Route::get('/menu/confirmation', function(){ return Inertia::render('menu/ConfirmationDemo');})->name('menu.confirmation');
+Route::get('/menu/payment', function(){ return Inertia::render('menu/PaymentDemo');})->name('menu.payment');
+Route::get('/menu/personal', function(){ return Inertia::render('menu/PersonalDemo');})->name('menu.personal');
+Route::get('/menu/seat', function(){ return Inertia::render('menu/SeatDemo');})->name('menu.seat');
+
 // Utilities
 Route::get('/display', function(){ return Inertia::render('utilities/DisplayDemo');})->name('display');
 Route::get('/elevation', function(){ return Inertia::render('utilities/ElevationDemo');})->name('elevation');

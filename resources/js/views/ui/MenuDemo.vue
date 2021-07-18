@@ -1,13 +1,7 @@
 <template>
   <div class="p-grid p-fluid">
     <inertia-head title="Menu Demo" />
-    <div class="p-col-12">
-      <div class="card card-w-title">
-        <h5>Breadcrumb</h5>
-        <Breadcrumb :home="breadcrumbHome" :model="breadcrumbItems" />
-      </div>
-    </div>
-    <!-- <div class="p-grid p-fluid">
+
     <div class="p-col-12">
       <div class="card card-w-title">
         <h5>Menubar</h5>
@@ -34,9 +28,14 @@
         <h5>Steps</h5>
         <p>Steps and TabMenu are integrated with the same child routes.</p>
         <Steps :model="nestedRouteItems" :readonly="false" />
-        <router-view />
+        <slot />
       </div>
     </div>
+    <!-- <div class="p-grid p-fluid">
+
+
+
+
 
     <div class="p-col-12 p-md-6">
       <div class="card card-w-title">
@@ -183,30 +182,30 @@ export default {
           icon: "pi pi-fw pi-sign-out",
         },
       ],
-      breadcrumbHome: { icon: "pi pi-home", target: 'dashboard' },
+      breadcrumbHome: { icon: "pi pi-home", target: "dashboard" },
       breadcrumbItems: [
         { label: "Computer", target: "menu" },
         { label: "Notebook", target: "menu" },
         { label: "Accessories", target: "menu" },
         { label: "Backpacks", target: "menu" },
-        { label: "Item", target: "menu" }
+        { label: "Item", target: "menu" },
       ],
       nestedRouteItems: [
         {
           label: "Personal",
-          to: "/menu",
+          to: "menu.personal",
         },
         {
           label: "Seat",
-          to: "/menu/seat",
+          to: "menu.seat",
         },
         {
           label: "Payment",
-          to: "/menu/payment",
+          to: "menu.payment",
         },
         {
           label: "Confirmation",
-          to: "/menu/confirmation",
+          to: "menu.confirmation",
         },
       ],
       tieredMenuItems: [

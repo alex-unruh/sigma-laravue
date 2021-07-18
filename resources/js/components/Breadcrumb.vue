@@ -1,7 +1,7 @@
 <template>
   <nav class="p-breadcrumb p-component" aria-label="Breadcrumb">
     <ul>
-      <li>
+      <li class="p-breadcrumb-home">
         <inertia-link :href="route(home.target)" class="p-menuitem-link">
           <i :class="home.icon"></i>&nbsp;
         </inertia-link>
@@ -49,5 +49,9 @@ export default {
 
 .p-breadcrumb .p-menuitem-link {
   text-decoration: none;
+}
+
+li a{
+  color: #999;
 }
 </style>

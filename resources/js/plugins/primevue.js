@@ -13,7 +13,6 @@ import AvatarGroup from "primevue/avatargroup";
 import Badge from "primevue/badge";
 import BadgeDirective from "primevue/badgedirective";
 import Button from "primevue/button";
-import Breadcrumb from "@/primevue/Breadcrumb";
 import Calendar from "primevue/calendar";
 import Card from "primevue/card";
 import Carousel from "primevue/carousel";
@@ -46,8 +45,7 @@ import Knob from "primevue/knob";
 import Galleria from "primevue/galleria";
 import Listbox from "primevue/listbox";
 import MegaMenu from "primevue/megamenu";
-import Menu from "primevue/menu";
-import Menubar from "primevue/menubar";
+
 import Message from "primevue/message";
 import MultiSelect from "primevue/multiselect";
 import OrderList from "primevue/orderlist";
@@ -71,7 +69,6 @@ import Skeleton from "primevue/skeleton";
 import SplitButton from "primevue/splitbutton";
 import Splitter from "primevue/splitter";
 import SplitterPanel from "primevue/splitterpanel";
-import Steps from "primevue/steps";
 import TabMenu from "primevue/tabmenu";
 import Tag from "primevue/tag";
 import TieredMenu from "primevue/tieredmenu";
@@ -87,6 +84,12 @@ import ToggleButton from "primevue/togglebutton";
 import Tree from "primevue/tree";
 import TreeTable from "primevue/treetable";
 import TriStateCheckbox from "primevue/tristatecheckbox";
+
+// internal imports
+import Menubar from "@/components/Menubar";
+import Breadcrumb from "@/components/Breadcrumb";
+import Steps from "@/components/Steps";
+import Menu from "@/components/Menu";
 
 //Register Primevue
 export const registrationPrimevue = (app) => {
